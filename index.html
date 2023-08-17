@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/index.css">
+    <script src="https://kit.fontawesome.com/add6e03308.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-blue-60">
+    <section>
+        <div id="sample" class="bg-blue-300 container mx-auto w-3/4 mt-10 pb-5 mb-5 shadow-2xl rounded-lg">
+            <h1 class="font-mono text-2xl md:text-4xl font-bold text-center py-5">
+                My Text Editor
+            </h1>
+            <div class="bg-blue-200 border-2 border-black rounded-sm container mx-auto w-3/4 mb-5 p-5">
+                <div class="grid md:grid-cols-3 md:gap-4 border-b-2 border-black pb-5">
+                    <div class="rounded-lg ">
+                        <button type="button" onclick="formatText('bold')"
+                            class="focus:bg-blue-500 focus:ring focus:rounded-lg py-1 px-3">
+                            <i class="fa-solid fa-bold"></i>
+                        </button>
+                        <button onclick="formatText('italic')"
+                            class="focus:bg-blue-500 focus:ring focus:rounded-lg py-1 px-3">
+                            <i class="fa-solid fa-italic"></i>
+                        </button>
+                        <button onclick="formatText('underline')"
+                            class="focus:bg-blue-500 focus:ring focus:rounded-lg py-1 px-3">
+                            <i class="fa-solid fa-underline"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <button onclick="textAlign('left')"
+                            class="align py-1 px-3 focus:bg-blue-500 focus:ring focus:rounded-lg">
+                            <i class="fa-solid fa-align-left"></i>
+                        </button>
+                        <button onclick="textAlign('center')"
+                            class="align py-1 px-3 focus:bg-blue-500 focus:ring focus:rounded-lg">
+                            <i class="fa-solid fa-align-center"></i>
+                        </button>
+                        <button onclick="textAlign('right')"
+                            class="align py-1 px-3 focus:bg-blue-500 focus:ring focus:rounded-lg">
+                            <i class="fa-solid fa-align-right"></i>
+                        </button>
+                        <button onclick="textAlign('justify')"
+                            class="align py-1 px-3 focus:bg-blue-500 focus:ring focus:rounded-lg">
+                            <i class="fa-solid fa-align-justify"></i>
+                        </button>
+                    </div>
+                    <div class="rounded-lg flex justify-center items-center ">
+                        <input
+                            class="w-11 text-xl bg-blue-200 font-semibold rounded-lg focus:bg-blue-500 focus:ring focus:rounded-lg"
+                            id="font-size" type="number" value="16" min="1" max="100" onchange="changeFontSize()">
+                        </button>
+                        <button id='text-transform' onclick="transformText()"
+                            class="focus:bg-blue-500 focus:ring focus:rounded-lg text-xl py-1 px-3">
+                            <span class="font-semibold">aA</span>
+                        </button>
+                        <input id="pick-color" type="color" class="focus:bg-blue-500 focus:ring focus:rounded-lg ml-3"
+                            onchange="pickColor()">
+
+                    </div>
+                </div>
+                <div class="mt-5" spellcheck="false">
+                    <textarea class="p-2 w-full h-[380px]" id="editor" rows="12" cols="100"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script src="./js/core.js"></script>
+</body>
+
+</html>
